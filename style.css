@@ -86,8 +86,8 @@ a {
 .hero-logo {
   width: 176px;
   height: auto;
-  object-fit: contain;
-  margin-bottom: 20px;
+  object-fit: fit;
+  margin-bottom: 5px;
 }
 
 .eyebrow {
