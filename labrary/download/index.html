@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labrary Download</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Pretendard",
+        "Noto Sans KR",
+        sans-serif;
+      background: #f4f1e8;
+      color: #173f37;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 48px 22px 36px;
+      text-align: center;
+    }
+
+    .app-icon {
+      width: 86px;
+      height: 86px;
+      margin: 0 auto 22px;
+      border-radius: 24px;
+      background: #174f43;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f3cf55;
+      font-size: 36px;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(23, 79, 67, 0.18);
+    }
+
+    h1 {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .slogan {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #6d7f79;
+      margin-bottom: 28px;
+    }
+
+    .description {
+      font-size: 17px;
+      line-height: 1.65;
+      color: #405a53;
+      margin-bottom: 32px;
+    }
+
+    .store-button {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      min-height: 66px;
+      margin-bottom: 12px;
+      padding: 12px 18px;
+      border-radius: 18px;
+      text-decoration: none;
+      text-align: left;
+      transition: transform 0.15s ease;
+    }
+
+    .store-button:active {
+      transform: scale(0.985);
+    }
+
+    .app-store {
+      background: #173f37;
+      color: white;
+    }
+
+    .play-store {
+      background: #f3cf55;
+      color: #173f37;
+    }
+
+    .store-icon {
+      width: 34px;
+      font-size: 30px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .store-text-small {
+      display: block;
+      font-size: 12px;
+      opacity: 0.72;
+      margin-bottom: 2px;
+    }
+
+    .store-text-big {
+      display: block;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      padding: 15px 6px;
+      border-radius: 16px;
+      background: rgba(23, 79, 67, 0.07);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .feature-icon {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      margin-top: 34px;
+      font-size: 12px;
+      color: #8a9994;
+    }
+
+    @media (min-width: 700px) {
+      .page {
+        padding-top: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <div class="app-icon">L</div>
+
+    <h1>Labrary</h1>
+
+    <div class="slogan">
+      READ. CHALLENGE. GROW.
+    </div>
+
+    <p class="description">
+      독서 기록부터 독서 챌린지까지.<br />
+      <strong>나만의 독서 습관을 만들어보세요.</strong>
+    </p>
+
+    <a
+      class="store-button app-store"
+      href="https://apps.apple.com/kr/app/labrary-%EB%8F%85%EC%84%9C-%EA%B8%B0%EB%A1%9D-%EC%B1%8C%EB%A6%B0%EC%A7%80/id6758513187"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="store-icon"></div>
+      <div>
+        <span class="store-text-small">iPhone에서</span>
+        <span class="store-text-big">App Store 다운로드</span>
+      </div>
+    </a>
+
+    <a
+      class="store-button play-store"
+      href="https://play.google.com/store/apps/details?id=com.la_pharos.labrary"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="store-icon">▶</div>
+      <div>
+        <span class="store-text-small">Android에서</span>
+        <span class="store-text-big">Google Play 다운로드</span>
+      </div>
+    </a>
+
+    <section class="features">
+      <div class="feature">
+        <span class="feature-icon">📖</span>
+        독서 기록
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🔥</span>
+        독서 챌린지
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">📊</span>
+        독서 통계
+      </div>
+    </section>
+
+    <div class="footer">
+      Labrary · VIIXI Labs
+    </div>
+
+  </main>
+</body>
+</html>
