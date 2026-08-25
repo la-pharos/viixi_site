@@ -3,217 +3,728 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Labrary Download</title>
+
+  <title>Labrary | Download</title>
+
+  <meta
+    name="description"
+    content="Labrary - 독서 기록부터 독서 챌린지까지. 나만의 독서 습관을 만들어보세요."
+  />
 
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #101010;
+      --muted: #6b6b6b;
+      --soft: #f7f7f7;
+      --line: #e8e8e8;
+
+      --green: #013328;
+      --green-soft: #e8f1ed;
+
+      --yellow: #f6d447;
+    }
+
     * {
       box-sizing: border-box;
+    }
+
+    html,
+    body {
       margin: 0;
       padding: 0;
     }
 
     body {
+      min-height: 100vh;
+
+      background: var(--bg);
+      color: var(--text);
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
-        "Pretendard",
+        "Segoe UI",
+        Roboto,
         "Noto Sans KR",
+        "Apple SD Gothic Neo",
+        Arial,
         sans-serif;
-      background: #f4f1e8;
-      color: #173f37;
-      min-height: 100vh;
+
+      -webkit-font-smoothing: antialiased;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================
+       전체
+       ========================================= */
+
     .page {
-      max-width: 460px;
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 48px 22px 36px;
-      text-align: center;
+    }
+
+    /* =========================================
+       상단
+       ========================================= */
+
+    .nav {
+      height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-size: 15px;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-brand span {
+      color: var(--muted);
+      font-weight: 450;
+    }
+
+    .back-link {
+      color: var(--muted);
+      font-size: 14px;
+
+      transition: opacity 0.15s ease;
+    }
+
+    .back-link:hover {
+      opacity: 0.65;
+    }
+
+    /* =========================================
+       Hero
+       ========================================= */
+
+    .hero {
+      flex: 1;
+
+      display: flex;
+      align-items: center;
+
+      padding: 82px 0 90px;
+    }
+
+    .hero-grid {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 1fr 0.86fr;
+
+      align-items: center;
+
+      gap: 90px;
+    }
+
+    /* =========================================
+       왼쪽 소개
+       ========================================= */
+
+    .app-heading {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+
+      margin-bottom: 34px;
     }
 
     .app-icon {
-      width: 86px;
-      height: 86px;
-      margin: 0 auto 22px;
+      width: 92px;
+      height: 92px;
+
       border-radius: 24px;
-      background: #174f43;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f3cf55;
-      font-size: 36px;
-      font-weight: 800;
-      box-shadow: 0 12px 28px rgba(23, 79, 67, 0.18);
+
+      object-fit: cover;
+
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
     }
 
-    h1 {
-      font-size: 34px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
+    .app-name {
+      margin: 0;
+
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+
+      font-weight: 730;
     }
 
-    .slogan {
+    .eyebrow {
+      margin: 0 0 18px;
+
+      color: var(--green);
+
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.14em;
-      color: #6d7f79;
-      margin-bottom: 28px;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .headline {
+      margin: 0;
+
+      max-width: 620px;
+
+      font-size: clamp(32px, 4.2vw, 54px);
+      line-height: 1.15;
+
+      letter-spacing: -0.045em;
+
+      font-weight: 700;
+    }
+
+    .headline strong {
+      color: var(--green);
     }
 
     .description {
-      font-size: 17px;
-      line-height: 1.65;
-      color: #405a53;
-      margin-bottom: 32px;
+      max-width: 540px;
+
+      margin: 24px 0 0;
+
+      color: var(--muted);
+
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       오른쪽 Download Panel
+       ========================================= */
+
+    .download-panel {
+      background:
+        linear-gradient(
+          145deg,
+          #013328,
+          #00513f
+        );
+
+      border-radius: 36px;
+
+      padding: 42px;
+
+      color: #ffffff;
+    }
+
+    .panel-label {
+      margin: 0 0 10px;
+
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .panel-title {
+      margin: 0 0 28px;
+
+      font-size: 28px;
+      line-height: 1.3;
+
+      letter-spacing: -0.025em;
+      font-weight: 650;
+    }
+
+    /* =========================================
+       Store buttons
+       ========================================= */
+
+    .store-list {
+      display: flex;
+      flex-direction: column;
+
+      gap: 12px;
     }
 
     .store-button {
+      min-height: 72px;
+
+      padding: 0 22px;
+
+      border-radius: 20px;
+
       display: flex;
       align-items: center;
-      gap: 14px;
-      width: 100%;
-      min-height: 66px;
-      margin-bottom: 12px;
-      padding: 12px 18px;
-      border-radius: 18px;
-      text-decoration: none;
-      text-align: left;
-      transition: transform 0.15s ease;
+
+      gap: 16px;
+
+      transition:
+        transform 0.16s ease,
+        opacity 0.16s ease;
+    }
+
+    .store-button:hover {
+      transform: translateY(-2px);
     }
 
     .store-button:active {
       transform: scale(0.985);
     }
 
-    .app-store {
-      background: #173f37;
-      color: white;
+    .store-button.apple {
+      background: #ffffff;
+      color: #111111;
     }
 
-    .play-store {
-      background: #f3cf55;
-      color: #173f37;
+    .store-button.google {
+      background: var(--yellow);
+      color: #102f29;
     }
 
     .store-icon {
-      width: 34px;
-      font-size: 30px;
-      text-align: center;
+      width: 32px;
+
       flex-shrink: 0;
+
+      text-align: center;
+
+      font-size: 30px;
+      line-height: 1;
     }
 
-    .store-text-small {
+    .store-copy {
+      min-width: 0;
+    }
+
+    .store-small {
       display: block;
-      font-size: 12px;
-      opacity: 0.72;
+
       margin-bottom: 2px;
+
+      color: inherit;
+      opacity: 0.58;
+
+      font-size: 11px;
+      font-weight: 550;
     }
 
-    .store-text-big {
+    .store-title {
       display: block;
+
       font-size: 17px;
-      font-weight: 700;
+      font-weight: 680;
+
+      letter-spacing: -0.01em;
     }
+
+    .download-note {
+      margin: 20px 2px 0;
+
+      color: rgba(255, 255, 255, 0.62);
+
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       Features
+       ========================================= */
 
     .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+
       gap: 8px;
-      margin-top: 28px;
+
+      margin-top: 34px;
     }
 
     .feature {
-      padding: 15px 6px;
-      border-radius: 16px;
-      background: rgba(23, 79, 67, 0.07);
-      font-size: 12px;
-      font-weight: 700;
+      padding: 9px 14px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 999px;
+
+      background: #ffffff;
+
+      font-size: 13px;
+      font-weight: 550;
+
+      color: #333333;
     }
 
-    .feature-icon {
-      display: block;
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
+    /* =========================================
+       Footer
+       ========================================= */
 
     .footer {
-      margin-top: 34px;
-      font-size: 12px;
-      color: #8a9994;
+      border-top: 1px solid var(--line);
+
+      padding: 22px 0;
     }
 
-    @media (min-width: 700px) {
-      .page {
-        padding-top: 80px;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 16px;
+
+      color: #8a8a8a;
+
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer a:hover {
+      color: #111111;
+    }
+
+    /* =========================================
+       Mobile
+       ========================================= */
+
+    @media (max-width: 760px) {
+
+      .container {
+        width: min(100% - 32px, 560px);
+      }
+
+      .nav {
+        height: 64px;
+      }
+
+      .back-link {
+        display: none;
+      }
+
+      .hero {
+        padding: 48px 0 56px;
+
+        align-items: flex-start;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .app-heading {
+        gap: 16px;
+
+        margin-bottom: 28px;
+      }
+
+      .app-icon {
+        width: 74px;
+        height: 74px;
+
+        border-radius: 20px;
+      }
+
+      .app-name {
+        font-size: 46px;
+      }
+
+      .eyebrow {
+        margin-bottom: 14px;
+
+        font-size: 11px;
+      }
+
+      .headline {
+        font-size: 34px;
+      }
+
+      .description {
+        margin-top: 18px;
+
+        font-size: 16px;
+      }
+
+      .features {
+        margin-top: 26px;
+      }
+
+      .download-panel {
+        border-radius: 28px;
+
+        padding: 28px 20px 22px;
+      }
+
+      .panel-title {
+        margin-bottom: 22px;
+
+        font-size: 23px;
+      }
+
+      .store-button {
+        min-height: 68px;
+
+        border-radius: 18px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 8px;
+      }
+    }
+
+    /* =========================================
+       아주 작은 모바일
+       ========================================= */
+
+    @media (max-width: 360px) {
+
+      .headline {
+        font-size: 30px;
+      }
+
+      .app-name {
+        font-size: 40px;
+      }
+
+      .store-title {
+        font-size: 15px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
 
-    <div class="app-icon">L</div>
+  <div class="page">
 
-    <h1>Labrary</h1>
+    <!-- ======================================
+         NAV
+         ====================================== -->
 
-    <div class="slogan">
-      READ. CHALLENGE. GROW.
-    </div>
+    <header class="nav">
+      <div class="container nav-inner">
 
-    <p class="description">
-      독서 기록부터 독서 챌린지까지.<br />
-      <strong>나만의 독서 습관을 만들어보세요.</strong>
-    </p>
+        <div class="nav-brand">
+          VIIXI Labs
+          <span>/ Labrary</span>
+        </div>
 
-    <a
-      class="store-button app-store"
-      href="https://apps.apple.com/kr/app/labrary-%EB%8F%85%EC%84%9C-%EA%B8%B0%EB%A1%9D-%EC%B1%8C%EB%A6%B0%EC%A7%80/id6758513187"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <div class="store-icon"></div>
-      <div>
-        <span class="store-text-small">iPhone에서</span>
-        <span class="store-text-big">App Store 다운로드</span>
+        <a
+          class="back-link"
+          href="https://viixi.kr/labrary/"
+        >
+          View Labrary →
+        </a>
+
       </div>
-    </a>
+    </header>
 
-    <a
-      class="store-button play-store"
-      href="https://play.google.com/store/apps/details?id=com.la_pharos.labrary"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <div class="store-icon">▶</div>
-      <div>
-        <span class="store-text-small">Android에서</span>
-        <span class="store-text-big">Google Play 다운로드</span>
+
+    <!-- ======================================
+         HERO
+         ====================================== -->
+
+    <main class="hero">
+
+      <div class="container hero-grid">
+
+        <!-- 왼쪽 -->
+
+        <section>
+
+          <div class="app-heading">
+
+            <img
+              class="app-icon"
+              src="../../assets/labrary-icon.png"
+              alt="Labrary app icon"
+            />
+
+            <h1 class="app-name">
+              Labrary
+            </h1>
+
+          </div>
+
+          <p class="eyebrow">
+            Read. Challenge. Grow.
+          </p>
+
+          <h2 class="headline">
+            기록하고,
+            도전하고,<br />
+            <strong>독서를 습관으로.</strong>
+          </h2>
+
+          <p class="description">
+            독서 기록부터 독서 챌린지까지.<br />
+            Labrary와 함께 나만의 독서 습관을 만들어보세요.
+          </p>
+
+          <div class="features">
+
+            <span class="feature">
+              독서 기록
+            </span>
+
+            <span class="feature">
+              독서 챌린지
+            </span>
+
+            <span class="feature">
+              독서 통계
+            </span>
+
+            <span class="feature">
+              독서 리포트
+            </span>
+
+          </div>
+
+        </section>
+
+
+        <!-- 오른쪽 -->
+
+        <aside class="download-panel">
+
+          <p class="panel-label">
+            Download Labrary
+          </p>
+
+          <h3 class="panel-title">
+            지금 바로<br />
+            독서를 시작해보세요.
+          </h3>
+
+
+          <div class="store-list">
+
+            <!-- App Store -->
+
+            <a
+              class="store-button apple"
+              href="https://apps.apple.com/kr/app/labrary-%EB%8F%85%EC%84%9C-%EA%B8%B0%EB%A1%9D-%EC%B1%8C%EB%A6%B0%EC%A7%80/id6758513187"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <div class="store-icon">
+                
+              </div>
+
+              <div class="store-copy">
+
+                <span class="store-small">
+                  Download on the
+                </span>
+
+                <span class="store-title">
+                  App Store
+                </span>
+
+              </div>
+
+            </a>
+
+
+            <!-- Google Play -->
+
+            <a
+              class="store-button google"
+              href="https://play.google.com/store/apps/details?id=com.la_pharos.labrary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <div class="store-icon">
+                ▶
+              </div>
+
+              <div class="store-copy">
+
+                <span class="store-small">
+                  GET IT ON
+                </span>
+
+                <span class="store-title">
+                  Google Play
+                </span>
+
+              </div>
+
+            </a>
+
+          </div>
+
+
+          <p class="download-note">
+            iOS와 Android에서 무료로 시작할 수 있습니다.
+          </p>
+
+        </aside>
+
       </div>
-    </a>
 
-    <section class="features">
-      <div class="feature">
-        <span class="feature-icon">📖</span>
-        독서 기록
+    </main>
+
+
+    <!-- ======================================
+         FOOTER
+         ====================================== -->
+
+    <footer class="footer">
+
+      <div class="container footer-inner">
+
+        <span>
+          © VIIXI Labs. All rights reserved.
+        </span>
+
+        <div class="footer-links">
+
+          <a href="https://viixi.kr/labrary/privacy/">
+            Privacy
+          </a>
+
+          <a href="https://viixi.kr/labrary/terms/">
+            Terms
+          </a>
+
+        </div>
+
       </div>
 
-      <div class="feature">
-        <span class="feature-icon">🔥</span>
-        독서 챌린지
-      </div>
+    </footer>
 
-      <div class="feature">
-        <span class="feature-icon">📊</span>
-        독서 통계
-      </div>
-    </section>
+  </div>
 
-    <div class="footer">
-      Labrary · VIIXI Labs
-    </div>
-
-  </main>
 </body>
 </html>
