@@ -225,6 +225,10 @@ h1 {
   align-items: center;
 }
 
+.unmailed-panel {
+  background: #FAFAF8;
+}
+
 .labrary-panel img {
   width: min(320px, 78%);
   height: auto;
