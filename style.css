@@ -225,8 +225,8 @@ h1 {
   align-items: center;
 }
 
-.unmailed-panel {
-  background: #FAFAF8;
+.labrary-panel.unmailed-panel {
+  background: #FAFAF8 !important;
 }
 
 .labrary-panel img {
